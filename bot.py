@@ -5,11 +5,6 @@ import responses
 async def print_response(message, user_message, is_private):
     try:
         response = responses.make_response(user_message)
-
-        # if (is_private):
-        #     await message.author.send(response)
-        # else:
-        #     await message.channel.send(response)
         
         await message.author.send(response) if is_private else await message.channel.send(response)
         
